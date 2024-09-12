@@ -4,7 +4,7 @@ open Avalonia.Controls
 open Avalonia.Markup.Xaml
 open Material.Avalonia
 
-type MainView () as this = 
+type HomeView () as this = 
     inherit UserControl ()
 
     do this.InitializeComponent()

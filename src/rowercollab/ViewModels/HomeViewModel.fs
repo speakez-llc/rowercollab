@@ -8,10 +8,7 @@ open Elmish
 open ReactiveElmish
 open ReactiveElmish.Avalonia
 
-
-type AboutRowerViewModel() =
+type HomeViewModel() =
     inherit ReactiveElmishViewModel()
 
-    member this.Greeting = "This is the About Rower View!"
-    static member DesignVM = new AboutRowerViewModel()
-
+    member this.Greeting = "Welcome to The Home View!"

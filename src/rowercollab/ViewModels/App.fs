@@ -1,4 +1,4 @@
-﻿module App
+﻿module rowercollab.ViewModels.App
 
 open Elmish
 open ReactiveElmish.Avalonia
@@ -11,19 +11,15 @@ type Model =
     }
 
 and View = 
-    | ChartView
-    | GeoMapView
-    | ZoomView
-    | AboutView
-    | FilePickerView
-    | DashboardView
+    | SignUpView
+    | AboutRower
+    | AboutSpeakEZ
     | HomeView
-    | SettingsView
 
 type Msg = 
     | SetView of View
     | GoHome
-    | SetHomeViewActive of bool
+    | SetMainViewActive of bool
 
 let init () = 
     { 
@@ -37,7 +33,7 @@ let update (msg: Msg) (model: Model) =
         let isHomeViewActive = (view = HomeView)
         { model with View = view; IsHomeViewActive = isHomeViewActive }
     | GoHome -> { model with View = HomeView; IsHomeViewActive = true }
-    | SetHomeViewActive isActive -> { model with IsHomeViewActive = isActive }
+    | SetMainViewActive isActive -> { model with IsHomeViewActive = isActive }
 
 
 let app = 
@@ -45,5 +41,3 @@ let app =
     |> Program.withErrorHandler (fun (_, ex) -> printfn $"Error: {ex.Message}")
     //|> Program.withConsoleTrace
     |> Program.mkStore
-
-

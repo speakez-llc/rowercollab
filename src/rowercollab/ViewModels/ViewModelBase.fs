@@ -1,7 +1,6 @@
 ﻿namespace rowercollab.ViewModels
 
-open CommunityToolkit.Mvvm.ComponentModel
+open ReactiveUI
 
-[<AbstractClass>]
 type ViewModelBase() =
-    inherit ObservableObject()
+    inherit ReactiveObject()

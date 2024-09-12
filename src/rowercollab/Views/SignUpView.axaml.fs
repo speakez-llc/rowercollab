@@ -2,6 +2,7 @@
 
 open Avalonia.Controls
 open Avalonia.Markup.Xaml
+open Material.Icons.Avalonia
 
 type SignUpView () as this =
     inherit UserControl ()

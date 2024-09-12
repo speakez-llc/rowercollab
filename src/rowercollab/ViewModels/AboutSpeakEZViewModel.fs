@@ -7,11 +7,11 @@ open Avalonia.Layout
 open Elmish
 open ReactiveElmish
 open ReactiveElmish.Avalonia
-open App
+
 
 type AboutSpeakEZViewModel() =
     inherit ReactiveElmishViewModel()
 
-    member this.Greeting = "This is the Sign Up View!"
+    member this.Greeting = "This is the About SpeakEZ View!"
     static member DesignVM = new AboutSpeakEZViewModel()
 

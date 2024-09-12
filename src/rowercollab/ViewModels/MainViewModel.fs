@@ -7,9 +7,8 @@ open Avalonia.Layout
 open Elmish
 open ReactiveElmish
 open ReactiveElmish.Avalonia
-open App
 
 type MainViewModel() =
     inherit ReactiveElmishViewModel()
 
-    member this.Greeting = "Welcome to Avalonia!"
+    member this.Greeting = "Welcome to The Main View!"
