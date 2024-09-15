@@ -4,19 +4,28 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:vm="clr-namespace:rowercollab.ViewModels"
              xmlns:controls="clr-namespace:Material.Styles.Controls;assembly=Material.Styles"
+             xmlns:icon="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
+             xmlns:p1="clr-namespace:Material.Styles.Assists;assembly=Material.Styles"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="rowercollab.Views.ContactView"
              x:DataType="vm:ContactViewModel">
   <Design.DataContext>
     <!-- This only sets the DataContext for the previewer in an IDE,
          to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.fs) -->
-    <vm:HomeViewModel />
+    <vm:ContactViewModel />
   </Design.DataContext>
 
     <StackPanel>
         <controls:Card Margin="16">
-            <TextBlock Classes="Headline6"
-                       Text="{Binding Greeting}" />
+            <TextBlock Classes="Headline4"
+                       Text="Welcome to the Contact View!!" FontFamily="{StaticResource NunitoFont}"/>
         </controls:Card>
+        <StackPanel Width="300" HorizontalAlignment="Left" Margin="20">
+            <TextBox UseFloatingWatermark="True" Theme="{StaticResource FilledTextBox}" p1:TextFieldAssist.Label="Full Name" Margin="12"/>
+            <TextBox UseFloatingWatermark="True" Theme="{StaticResource FilledTextBox}" p1:TextFieldAssist.Label="Email" Margin="12"/>
+            <TextBox UseFloatingWatermark="True" Theme="{StaticResource FilledTextBox}" p1:TextFieldAssist.Label="Company" Margin="12"/>
+            <Button Content="Submit" ToolTip.Tip="Regular button with customized corner radius (16dp)." CornerRadius="16" Width="100" />
+        </StackPanel>
     </StackPanel>
+    
 </UserControl>

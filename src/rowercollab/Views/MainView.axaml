@@ -3,8 +3,10 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:vm="clr-namespace:rowercollab.ViewModels"
+             xmlns:pages="clr-namespace:rowercollab.Views"
              xmlns:icon="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
              xmlns:controls="clr-namespace:Material.Styles.Controls;assembly=Material.Styles"
+             xmlns:themes="clr-namespace:Material.Styles.Themes;assembly=Material.Styles"
              xmlns:views="clr-namespace:rowercollab.Views"
              mc:Ignorable="d"
              d:DesignWidth="800"
@@ -34,7 +36,7 @@
                             <Svg Path="avares://rowercollab/Assets/Rower_Logo_Blue_t.svg" Stretch="Uniform" Height="120" />
                         </StackPanel>
                     </controls:ColorZone>
-                    <ListBox Name="DrawerList">
+                    <ListBox Name="DrawerList" SelectedIndex="{Binding SelectedIndex}">
                         <ListBox.Styles>
                             <Style Selector="ListBoxItem">
                                 <Setter Property="Height" Value="48" />
@@ -45,7 +47,7 @@
                         <ListBoxItem>
                             <StackPanel Orientation="Horizontal">
                                 <icon:MaterialIcon Kind="Home" Width="24" Height="24"/>
-                                <TextBlock Text="Home" FontSize="24" Margin="10,0,0,0" />
+                                <TextBlock Text="Home" FontSize="24" Margin="10,0,0,0"/>
                             </StackPanel>
                         </ListBoxItem>
                         <ListBoxItem>
@@ -102,7 +104,8 @@
                     <icon:MaterialIcon Kind="Menu" Width="24" Height="24" />
                   </ToggleButton>
                   <TextBlock Grid.Column="2" Classes="Headline6" Text="Rower/SpeakEZ Collaboration"
-                             VerticalAlignment="Center" />
+                             VerticalAlignment="Center" 
+                             FontFamily="{StaticResource VarelaRound}"/>
                 </Grid>
               </controls:ColorZone>
             <ScrollViewer Name="mainScroller"
@@ -114,7 +117,7 @@
                       VerticalAlignment="Stretch">
                   <Carousel Name="PageCarousel"
                             HorizontalAlignment="Stretch"
-                            SelectedItem="{Binding SelectedView, Mode=TwoWay}">
+                            SelectedIndex="{Binding SelectedIndex}">
                       <Carousel.Styles>
                           <Style Selector="Carousel#PageCarousel:not(.no-transitions)">
                               <Setter Property="PageTransition">
@@ -123,6 +126,18 @@
                               </Setter>
                           </Style>
                       </Carousel.Styles>
+                        <!-- Main page -->
+                        <pages:HomeView />
+                        <!-- Project page -->
+                        <pages:ProjectView />
+                        <!-- Sign up page -->
+                        <pages:SignUpView />
+                        <!-- About Rower page -->
+                        <pages:AboutRowerView />
+                        <!-- About SpeakEZ page -->
+                        <pages:AboutSpeakEZView />
+                        <!-- Contact page -->
+                        <pages:ContactView />
                   </Carousel>
               </Border>
             </ScrollViewer>

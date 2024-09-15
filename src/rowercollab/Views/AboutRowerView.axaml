@@ -16,7 +16,8 @@
     <StackPanel>
         <controls:Card Margin="16">
             <TextBlock Classes="Headline6"
-                       Text="{Binding Greeting}" />
+                       Text="About Rower Consulting" />
         </controls:Card>
+        <Svg Path="avares://rowercollab/Assets/Rower_Logo_Gold_blk.svg" Stretch="Uniform" Width="400" Margin="80"/>
     </StackPanel>
 </UserControl>

@@ -15,8 +15,12 @@
 
     <StackPanel>
         <controls:Card Margin="16">
-            <TextBlock Classes="Headline6"
-                       Text="{Binding Greeting}" />
+            <StackPanel>
+                <TextBlock Classes="Headline6" Text="Welcome to the Home View!!"/>
+            </StackPanel>
+            
         </controls:Card>
+        <Svg Path="avares://rowercollab/Assets/Collab_Logo.svg" Stretch="Uniform" Height="500" />
+       
     </StackPanel>
 </UserControl>

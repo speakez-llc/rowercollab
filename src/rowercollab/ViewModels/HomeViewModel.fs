@@ -1,9 +1,6 @@
 ﻿namespace rowercollab.ViewModels
 
-
 open ReactiveElmish
-open ReactiveElmish.Avalonia
-open App
 
 type HomeViewModel() =
     inherit ReactiveElmishViewModel()

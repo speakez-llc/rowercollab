@@ -17,10 +17,8 @@
     <StackPanel>
         <controls:Card Margin="16">
             <TextBlock Classes="Headline6"
-                       Text="{Binding Greeting}" />
+                       Text="About SpeakEZ" />
         </controls:Card>
-        <controls:Card Margin="16">
-            <avalonia:MaterialIcon Kind="AccountCheck" />
-        </controls:Card>
+        <Svg Path="avares://rowercollab/Assets/SpeakEZ_Logo.svg" Stretch="Uniform" Width="400" Margin="100" />
     </StackPanel>
 </UserControl>
