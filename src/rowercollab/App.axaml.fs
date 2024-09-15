@@ -2,9 +2,10 @@ namespace rowercollab
 
 open Avalonia
 open Avalonia.Controls
+open Avalonia.Controls.ApplicationLifetimes
 open Avalonia.Markup.Xaml
 open rowercollab.Views
-open Avalonia.Controls.ApplicationLifetimes
+open rowercollab.ViewModels
 
 type App() =
     inherit Application()
@@ -19,15 +20,12 @@ type App() =
         printfn "loaded - end of initialize"
 
     override this.OnFrameworkInitializationCompleted() =
-
-
         match this.ApplicationLifetime with
         | :? IClassicDesktopStyleApplicationLifetime as desktop ->
             let mainWindow = MainWindow()
-            let appRoot = AppCompositionRoot(mainWindow)
-            mainWindow.Content <- appRoot.GetView<ViewModels.MainViewModel>()
+            let appRoot = AppCompositionRoot()
+            mainWindow.Content <- appRoot.GetView<MainViewModel>()
             desktop.MainWindow <- mainWindow
-
         | :? ISingleViewApplicationLifetime as singleViewLifetime ->
             printfn "OnFrameworkInitializationCompleted - ISingleViewApplicationLifetime"
             try
@@ -38,9 +36,6 @@ type App() =
                 printfn "call base"
             with x ->
                 printfn $"Exception: {x.Message} \n {x.StackTrace}"
-
-        | _ ->
-            // leave this here for design view re-renders
-            ()
+        | _ -> ()
 
         base.OnFrameworkInitializationCompleted()

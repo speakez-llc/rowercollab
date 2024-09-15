@@ -5,39 +5,127 @@
              xmlns:vm="clr-namespace:rowercollab.ViewModels"
              xmlns:icon="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
              xmlns:controls="clr-namespace:Material.Styles.Controls;assembly=Material.Styles"
+             xmlns:views="clr-namespace:rowercollab.Views"
              mc:Ignorable="d"
              d:DesignWidth="800"
              d:DesignHeight="450"
              x:Class="rowercollab.Views.MainView"
              x:DataType="vm:MainViewModel">
-    <Design.DataContext>
-        <vm:MainViewModel />
-    </Design.DataContext>
+    <UserControl.Styles>
+        <Style Selector="TextBlock.Subheadline">
+            <Setter Property="Margin" Value="0, 16" />
+        </Style>
+        <Style Selector="TextBlock.Subheadline2">
+            <Setter Property="Margin" Value="0, 8" />
+        </Style>
+        <Style Selector="TextBlock.Content">
+            <Setter Property="Margin" Value="0, 4" />
+            <Setter Property="HorizontalAlignment" Value="Left" />
+        </Style>
+    </UserControl.Styles>
 
-
-        <controls:NavigationDrawer Name="LeftDrawer" Grid.Column="0">
-            <controls:NavigationDrawer.LeftDrawerContent>
-                <ListBox>
-                    <ListBoxItem>
-                        <StackPanel Orientation="Horizontal">
-                            <icon:MaterialIcon Kind="Home" />
-                            <TextBlock Text="Home" Margin="10,0,0,0" />
+    <controls:NavigationDrawer Name="LeftDrawer" Classes="permanent"
+                               LeftDrawerOpened="{Binding ElementName=NavDrawerSwitch, Path=IsChecked, Mode=TwoWay}">
+        <controls:NavigationDrawer.LeftDrawerContent>
+            <ScrollViewer>
+                <StackPanel>
+                    <controls:ColorZone Mode="Light" Height="180">
+                        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                            <Svg Path="avares://rowercollab/Assets/Rower_Logo_Blue_t.svg" Stretch="Uniform" Height="120" />
                         </StackPanel>
-                    </ListBoxItem>
-                    <ListBoxItem>
-                        <StackPanel Orientation="Horizontal">
-                            <icon:MaterialIcon Kind="Account" />
-                            <TextBlock Text="Profile" Margin="10,0,0,0" />
-                        </StackPanel>
-                    </ListBoxItem>
-                    <ListBoxItem>
-                        <StackPanel Orientation="Horizontal">
-                            <icon:MaterialIcon Kind="Settings" />
-                            <TextBlock Text="Settings" Margin="10,0,0,0" />
-                        </StackPanel>
-                    </ListBoxItem>
-                </ListBox>
-            </controls:NavigationDrawer.LeftDrawerContent>
-        </controls:NavigationDrawer>
-
+                    </controls:ColorZone>
+                    <ListBox Name="DrawerList">
+                        <ListBox.Styles>
+                            <Style Selector="ListBoxItem">
+                                <Setter Property="Height" Value="48" />
+                                <Setter Property="Padding" Value="16,0" />
+                                <Setter Property="VerticalContentAlignment" Value="Center" />
+                            </Style>
+                        </ListBox.Styles>
+                        <ListBoxItem>
+                            <StackPanel Orientation="Horizontal">
+                                <icon:MaterialIcon Kind="Home" Width="24" Height="24"/>
+                                <TextBlock Text="Home" FontSize="24" Margin="10,0,0,0" />
+                            </StackPanel>
+                        </ListBoxItem>
+                        <ListBoxItem>
+                            <StackPanel Orientation="Horizontal">
+                                <icon:MaterialIcon Kind="ChartAreasplineVariant" Width="24" Height="24"/>
+                                <TextBlock Text="About The Project" FontSize="24" Margin="10,0,0,0" />
+                            </StackPanel>
+                        </ListBoxItem>
+                        <ListBoxItem>
+                            <StackPanel Orientation="Horizontal">
+                                <icon:MaterialIcon Kind="ClipboardCheck" Width="24" Height="30"/>
+                                <TextBlock Text="Sign Up For Access" FontSize="24" Margin="10,0,0,0" />
+                            </StackPanel>
+                        </ListBoxItem>
+                        <ListBoxItem>
+                            <StackPanel Orientation="Horizontal">
+                                <Svg Path="avares://rowercollab/Assets/Rower_Icon_Black_t.svg" Stretch="Uniform" Height="26"
+                                     Margin="-1,0,0,4"/>
+                                <TextBlock Text="About Rower" FontSize="24" Margin="10,0,0,0" />
+                            </StackPanel>
+                        </ListBoxItem>
+                        <ListBoxItem>
+                            <StackPanel Orientation="Horizontal">
+                                <Svg Path="avares://rowercollab/Assets/SpeakEZbwIcon.svg" Stretch="Uniform" Height="22"
+                                     Margin="0,0,0,4"/>
+                                <TextBlock Text="About SpeakEZ" FontSize="24" Margin="10,0,0,0" />
+                            </StackPanel>
+                        </ListBoxItem>
+                        <ListBoxItem>
+                            <StackPanel Orientation="Horizontal">
+                                <icon:MaterialIcon Kind="EmailCheck" Width="24" Height="24" />
+                                <TextBlock Text="Contact Us" FontSize="24" Margin="10,0,0,0" />
+                            </StackPanel>
+                        </ListBoxItem>
+                    </ListBox>
+                </StackPanel>
+            </ScrollViewer>
+        </controls:NavigationDrawer.LeftDrawerContent>
+        <DockPanel LastChildFill="true">
+            <controls:ColorZone Name="PART_AppBarContainer" VerticalAlignment="Top" HorizontalAlignment="Stretch"
+                                DockPanel.Dock="Top"
+                                Height="56" Mode="PrimaryMid" ZIndex="1">
+                <Grid Margin="16">
+                  <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="24" />
+                    <ColumnDefinition Width="32" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="32" />
+                    <ColumnDefinition Width="Auto" />
+                  </Grid.ColumnDefinitions>
+                  <ToggleButton Name="NavDrawerSwitch"
+                                Theme="{StaticResource MaterialFlatButton}"
+                                Width="32" Height="32" Padding="4">
+                    <icon:MaterialIcon Kind="Menu" Width="24" Height="24" />
+                  </ToggleButton>
+                  <TextBlock Grid.Column="2" Classes="Headline6" Text="Rower/SpeakEZ Collaboration"
+                             VerticalAlignment="Center" />
+                </Grid>
+              </controls:ColorZone>
+            <ScrollViewer Name="mainScroller"
+                      DockPanel.Dock="Top"
+                      HorizontalContentAlignment="Stretch"
+                      HorizontalAlignment="Stretch"
+                      HorizontalScrollBarVisibility="Disabled">
+              <Border HorizontalAlignment="Stretch"
+                      VerticalAlignment="Stretch">
+                  <Carousel Name="PageCarousel"
+                            HorizontalAlignment="Stretch"
+                            SelectedItem="{Binding SelectedView, Mode=TwoWay}">
+                      <Carousel.Styles>
+                          <Style Selector="Carousel#PageCarousel:not(.no-transitions)">
+                              <Setter Property="PageTransition">
+                                  <PageSlide Duration="0.25" SlideOutEasing="CircularEaseOut"
+                                             SlideInEasing="CircularEaseOut" />
+                              </Setter>
+                          </Style>
+                      </Carousel.Styles>
+                  </Carousel>
+              </Border>
+            </ScrollViewer>
+        </DockPanel>
+    </controls:NavigationDrawer>
 </UserControl>

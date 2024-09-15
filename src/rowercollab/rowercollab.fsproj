@@ -13,14 +13,18 @@
   <ItemGroup>
     <Compile Include="ViewModels\App.fs" />
     <Compile Include="ViewModels\ViewModelBase.fs" />
-    <Compile Include="ViewModels\MainViewModel.fs" />
     <Compile Include="ViewModels\HomeViewModel.fs" />
+    <Compile Include="ViewModels\ContactViewModel.fs" />
+    <Compile Include="ViewModels\ProjectViewModel.fs" />
     <Compile Include="ViewModels\SignUpViewModel.fs" />
     <Compile Include="ViewModels\AboutRowerViewModel.fs" />
     <Compile Include="ViewModels\AboutSpeakEZViewModel.fs" />
+    <Compile Include="ViewModels\MainViewModel.fs" />
     <Compile Include="Views\MainWindow.axaml.fs" />
     <Compile Include="Views\MainView.axaml.fs" />
     <Compile Include="Views\HomeView.axaml.fs" />
+    <Compile Include="Views\ContactView.axaml.fs" />
+    <Compile Include="Views\ProjectView.axaml.fs" />
     <Compile Include="Views\SignUpView.axaml.fs" />
     <Compile Include="Views\AboutRowerView.axaml.fs" />
     <Compile Include="Views\AboutSpeakEZView.axaml.fs" />
@@ -31,6 +35,8 @@
 
   <ItemGroup>
     <PackageReference Include="Avalonia" Version="$(AvaloniaVersion)" />
+    <PackageReference Include="Avalonia.Controls.Skia" Version="11.1.0.1" />
+    <PackageReference Include="Avalonia.Svg" Version="11.1.0.1" />
     <PackageReference Include="Avalonia.Themes.Fluent" Version="$(AvaloniaVersion)" />
     <PackageReference Include="Avalonia.Fonts.Inter" Version="$(AvaloniaVersion)" />    
     <!--Condition below is needed to remove Avalonia.Diagnostics package from build output in Release configuration.-->
@@ -41,5 +47,6 @@
     <PackageReference Include="Material.Avalonia.Dialogs" Version="3.7.3" />
     <PackageReference Include="Material.Icons.Avalonia" Version="2.1.10" />
     <PackageReference Include="ReactiveElmish.Avalonia" Version="1.4.0" />
+    <PackageReference Include="Svg.Skia" Version="2.0.0.1" />
   </ItemGroup>
 </Project>

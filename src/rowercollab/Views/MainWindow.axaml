@@ -8,5 +8,5 @@
         x:Class="rowercollab.Views.MainWindow"
         Icon="/Assets/avalonia-logo.ico"
         Title="Rower + SpeakEZ Collaboration">
-        <views:MainView />
+        <views:MainView x:Name="mainView" />
 </Window>

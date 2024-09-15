@@ -14,4 +14,3 @@ type AboutRowerViewModel() =
 
     member this.Greeting = "This is the About Rower View!"
     static member DesignVM = new AboutRowerViewModel()
-

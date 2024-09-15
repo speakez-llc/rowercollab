@@ -8,10 +8,9 @@ open Elmish
 open ReactiveElmish
 open ReactiveElmish.Avalonia
 
-
-type SignUpViewModel() =
+type ProjectViewModel() =
     inherit ReactiveElmishViewModel()
 
-    member this.Greeting = "This is the Sign Up View!"
-
-    static member DesignVM = new SignUpViewModel()
+    member this.Greeting = "Welcome to The Project View!"
+    static member DesignVM = 
+            new ProjectViewModel()

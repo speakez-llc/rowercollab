@@ -2,42 +2,41 @@
 
 open Elmish
 open ReactiveElmish.Avalonia
-open Avalonia.Data.Converters
 
-type Model =  
-    { 
+type Model =
+    {
         View: View
-        IsHomeViewActive: bool
     }
 
-and View = 
-    | SignUpView
-    | AboutRower
-    | AboutSpeakEZ
+and View =
     | HomeView
+    | ProjectView
+    | SignUpView
+    | AboutRowerView
+    | AboutSpeakEZView
+    | ContactView
 
-type Msg = 
+type Msg =
     | SetView of View
     | GoHome
     | SetMainViewActive of bool
 
-let init () = 
-    { 
+let init () =
+    {
         View = HomeView
-        IsHomeViewActive = true 
     }
+
+let logModel (model: Model) =
+    printfn "Current Model: %A" model
 
 let update (msg: Msg) (model: Model) =
     match msg with
-    | SetView view -> 
-        let isHomeViewActive = (view = HomeView)
-        { model with View = view; IsHomeViewActive = isHomeViewActive }
-    | GoHome -> { model with View = HomeView; IsHomeViewActive = true }
-    | SetMainViewActive isActive -> { model with IsHomeViewActive = isActive }
+    | SetView view -> { View = view }
+    | GoHome -> { View = HomeView }
 
 
 let app = 
     Program.mkAvaloniaSimple init update
     |> Program.withErrorHandler (fun (_, ex) -> printfn $"Error: {ex.Message}")
-    //|> Program.withConsoleTrace
+    |> Program.withConsoleTrace
     |> Program.mkStore
