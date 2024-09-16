@@ -17,8 +17,8 @@
 
     <StackPanel>
         <controls:Card Margin="16">
-            <TextBlock Classes="Headline4"
-                       Text="Welcome to the Contact View!!" FontFamily="{StaticResource NunitoFont}"/>
+            <TextBlock Classes="Headline6"
+                       Text="Let us know how we can help!"/>
         </controls:Card>
         <StackPanel Width="500" HorizontalAlignment="Left" Margin="20">
             <TextBox UseFloatingWatermark="True" Theme="{StaticResource FilledTextBox}" p1:TextFieldAssist.Label="Full Name" Margin="12" Width="300" HorizontalAlignment="Left"/>
