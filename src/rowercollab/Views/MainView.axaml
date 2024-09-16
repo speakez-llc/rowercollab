@@ -87,7 +87,7 @@
         </controls:NavigationDrawer.LeftDrawerContent>
         <DockPanel LastChildFill="true">
             <controls:ColorZone Name="PART_AppBarContainer" VerticalAlignment="Top" HorizontalAlignment="Stretch"
-                                DockPanel.Dock="Top"
+                                DockPanel.Dock="Top" Background="#164B72"
                                 Height="56" Mode="PrimaryMid" ZIndex="1">
                 <Grid Margin="16">
                   <Grid.ColumnDefinitions>
@@ -100,16 +100,16 @@
                   <ToggleButton Name="NavDrawerSwitch"
                                 Theme="{StaticResource MaterialFlatButton}"
                                 Width="32" Height="32" Padding="4">
-                    <icon:MaterialIcon Kind="Menu" Width="24" Height="24" />
+                    <icon:MaterialIcon Kind="Menu" Width="24" Height="24" Foreground="SeaShell" />
                   </ToggleButton>
                   <TextBlock Grid.Column="2" Classes="Headline6" Text="Rower/SpeakEZ Collaboration"
                              VerticalAlignment="Center" 
-                             FontFamily="{StaticResource VarelaRound}"/>
+                             FontFamily="{StaticResource HaginCaps}" Foreground="SeaShell"/>
                   <ToggleButton Grid.Column="5" Name="ThemeToggleSwitch"
                                 Theme="{StaticResource MaterialFlatButton}"
                                 Width="32" Height="32" Padding="4" 
                                 Command="{Binding SwitchTheme}" >
-                      <icon:MaterialIcon Kind="ThemeLightDark" Width="24" Height="24" />
+                      <icon:MaterialIcon Kind="ThemeLightDark" Width="24" Height="24" Foreground="SeaShell"/>
                   </ToggleButton>
                 </Grid>
               </controls:ColorZone>

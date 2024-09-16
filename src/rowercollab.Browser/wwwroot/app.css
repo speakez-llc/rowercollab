@@ -1,38 +1,54 @@
 ﻿/* HTML styles for the splash screen */
 
-html, body {
-    background: #1b2a4e;
-}
+
+.lds-ripple { position: fixed; top: 25%; left: 50%; width: 64px; height: 64px; z-index: 1001; } 
+.lds-ripple div { position: absolute; border: 4px solid #C18E3A; opacity: 1; border-radius: 50%; 
+    animation: lds-ripple 1s cubic-bezier(0, 0.2, 0.8, 1) infinite; } 
+.lds-ripple div:nth-child(2) { animation-delay: -0.5s; } 
+@keyframes lds-ripple { 0% { top: 28px; left: 28px; width: 0; height: 0; opacity: 1; }
+                                                                                                                                                                                                                                                                                                                                  100% { top: -1px; left: -1px; width: 58px; height: 58px; opacity: 0; } }
+
 .avalonia-splash {
     position: absolute;
     height: 100%;
     width: 100%;
-    background: black;
+    background: #36454F;
     font-family: 'Outfit', sans-serif;
-    justify-content: center;
-    align-items: center;
+    justify-content: flex-end;
+    align-items: flex-end;
     display: flex;
     pointer-events: none;
+    padding: 5%;
+    box-sizing: border-box;
 }
 
-/* Light theme styles */
-@media (prefers-color-scheme: light) {
-    .avalonia-splash {
-        background: black;
-    }
+.loading-text {
+    position: fixed;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 24px;
+    color: #fff;
+    z-index: 1002; /* Ensure this is higher than lds-ripple */
+}
 
-    .avalonia-splash h2 {
-        color: #1b2a4e;
-    }
+.loading-text h2 {
+    border-radius: 10px;
+    padding: 10px;
+    font-weight: 400;
+    font-size: 1.5rem;
+}
 
-    .avalonia-splash a {
-        color: #1b2a4e;
-    }
+.avalonia-splash h2 {
+    opacity: 0.75;
+    background: #164B72;
+    border-radius: 10px;
+    padding: 10px;
 }
 
 @media (prefers-color-scheme: dark) {
     .avalonia-splash {
-        background: linear-gradient(to right, black 30%, #1b2a4e 100%);
+        background: black;
     }
 
     .avalonia-splash h2 {
