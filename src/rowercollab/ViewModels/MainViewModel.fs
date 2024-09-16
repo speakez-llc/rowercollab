@@ -20,7 +20,7 @@ type MainViewModel(root: CompositionRoot) =
         
     let switchTheme() =
         Dispatcher.UIThread.InvokeAsync(fun () ->
-            if Application.Current.RequestedThemeVariant = ThemeVariant.Light then
+            if Application.Current.ActualThemeVariant = ThemeVariant.Light then
                 Application.Current.RequestedThemeVariant <- ThemeVariant.Dark
             else
                 Application.Current.RequestedThemeVariant <- ThemeVariant.Light
