@@ -65,7 +65,7 @@
                         <ListBoxItem>
                             <StackPanel Orientation="Horizontal">
                                 <Svg Path="avares://rowercollab/Assets/Rower_Icon_Black_t.svg" Stretch="Uniform" Height="26"
-                                     Margin="-1,0,0,4"/>
+                                     Margin="-1,0,0,4" Path.Fill="{DynamicResource MaterialDesignForeground}" />
                                 <TextBlock Text="About Rower" FontSize="24" Margin="10,0,0,0" />
                             </StackPanel>
                         </ListBoxItem>
@@ -109,7 +109,7 @@
                   <ToggleButton Grid.Column="5" Name="ThemeToggleSwitch"
                                 Theme="{StaticResource MaterialFlatButton}"
                                 Width="32" Height="32" Padding="4" 
-                                Command="{Binding SwitchThemeCommand}" >
+                                Command="{Binding SwitchTheme}" >
                       <icon:MaterialIcon Kind="ThemeLightDark" Width="24" Height="24" />
                   </ToggleButton>
                 </Grid>

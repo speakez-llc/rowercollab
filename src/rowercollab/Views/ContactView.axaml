@@ -20,10 +20,11 @@
             <TextBlock Classes="Headline4"
                        Text="Welcome to the Contact View!!" FontFamily="{StaticResource NunitoFont}"/>
         </controls:Card>
-        <StackPanel Width="300" HorizontalAlignment="Left" Margin="20">
-            <TextBox UseFloatingWatermark="True" Theme="{StaticResource FilledTextBox}" p1:TextFieldAssist.Label="Full Name" Margin="12"/>
-            <TextBox UseFloatingWatermark="True" Theme="{StaticResource FilledTextBox}" p1:TextFieldAssist.Label="Email" Margin="12"/>
-            <TextBox UseFloatingWatermark="True" Theme="{StaticResource FilledTextBox}" p1:TextFieldAssist.Label="Company" Margin="12"/>
+        <StackPanel Width="500" HorizontalAlignment="Left" Margin="20">
+            <TextBox UseFloatingWatermark="True" Theme="{StaticResource FilledTextBox}" p1:TextFieldAssist.Label="Full Name" Margin="12" Width="300" HorizontalAlignment="Left"/>
+            <TextBox UseFloatingWatermark="True" Theme="{StaticResource FilledTextBox}" p1:TextFieldAssist.Label="Email" Margin="12" Width="300" HorizontalAlignment="Left"/>
+            <TextBox UseFloatingWatermark="True" Theme="{StaticResource FilledTextBox}" p1:TextFieldAssist.Label="Company" Margin="12" Width="300" HorizontalAlignment="Left"/>
+            <TextBox UseFloatingWatermark="True" Theme="{StaticResource FilledTextBox}" p1:TextFieldAssist.Label="Your message" Margin="12" Classes="filled" AcceptsReturn="True" TextWrapping="Wrap" MaxHeight="500" Text="" />
             <Button Content="Submit" ToolTip.Tip="Regular button with customized corner radius (16dp)." CornerRadius="16" Width="100" />
         </StackPanel>
     </StackPanel>

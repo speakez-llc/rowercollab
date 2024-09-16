@@ -47,6 +47,6 @@ let update (msg: Msg) (model: Model) =
 let app = 
     Program.mkAvaloniaSimple init update
     |> Program.withErrorHandler (fun (_, ex) -> printfn $"Error: {ex.Message}")
-    |> Program.withConsoleTrace
+    //|> Program.withConsoleTrace
     |> Program.mkStore
 

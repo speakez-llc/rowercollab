@@ -23,7 +23,10 @@
             <TextBox UseFloatingWatermark="True" Theme="{StaticResource FilledTextBox}" p1:TextFieldAssist.Label="Full Name" Margin="12"/>
             <TextBox UseFloatingWatermark="True" Theme="{StaticResource FilledTextBox}" p1:TextFieldAssist.Label="Email" Margin="12"/>
             <TextBox UseFloatingWatermark="True" Theme="{StaticResource FilledTextBox}" p1:TextFieldAssist.Label="Company" Margin="12"/>
-            <Button Content="Submit" ToolTip.Tip="Regular button with customized corner radius (16dp)." CornerRadius="16" Width="100" />
+            <Grid ColumnDefinitions="Auto,Auto" ColumnSpan="10" Margin="20">
+                <Button Content="Smart Paste" ToolTip.Tip="Paste your clipboard into the form" CornerRadius="16" Width="120" Grid.Column="0" Background="Chocolate" />
+                <Button Content="Submit" ToolTip.Tip="Send the form to us for processing" CornerRadius="16" Width="100" Grid.Column="1" />
+            </Grid>
         </StackPanel>
         
     </StackPanel>

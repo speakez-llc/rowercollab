@@ -3,8 +3,7 @@
              xmlns:themes="clr-namespace:Material.Styles.Themes;assembly=Material.Styles"
              xmlns:icon="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
              xmlns:local="clr-namespace:rowercollab"
-             x:Class="rowercollab.App" 
-             RequestedThemeVariant="Light">
+             x:Class="rowercollab.App" >
     <Application.Resources>
         <FontFamily x:Key="NunitoFont">Assets/Fonts/Nunito.ttf</FontFamily>
         <FontFamily x:Key="VarelaRound">Assets/Fonts/VarelaRound.ttf</FontFamily>
@@ -15,6 +14,6 @@
     </Application.DataTemplates>
     <Application.Styles>
         <icon:MaterialIconStyles />
-        <themes:MaterialTheme PrimaryColor="Grey" SecondaryColor="LightBlue" />
+        <themes:MaterialTheme BaseTheme="Dark" PrimaryColor="Grey" SecondaryColor="LightBlue" />
     </Application.Styles>
 </Application>

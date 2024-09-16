@@ -1,9 +1,10 @@
 ﻿namespace rowercollab.ViewModels
 
-open ReactiveUI
+open Avalonia.Interactivity
+open Material.Styles.Themes
+open Material.Styles.Themes.Base
 open Avalonia
 open Avalonia.Threading
-open Avalonia.Styling
 open ReactiveElmish
 open ReactiveElmish.Avalonia
 open Elmish
@@ -20,10 +21,12 @@ type MainViewModel(root: CompositionRoot) =
         
     let switchTheme() =
         Dispatcher.UIThread.InvokeAsync(fun () ->
-            if Application.Current.ActualThemeVariant = ThemeVariant.Light then
-                Application.Current.RequestedThemeVariant <- ThemeVariant.Dark
-            else
-                Application.Current.RequestedThemeVariant <- ThemeVariant.Light
+            let materialTheme = Application.Current.LocateMaterialTheme<MaterialTheme>()
+            materialTheme.BaseTheme <-
+                if materialTheme.BaseTheme = BaseThemeMode.Light then
+                    BaseThemeMode.Dark
+                else
+                    BaseThemeMode.Light
         ) |> ignore
 
     member this.SelectedIndex
@@ -54,7 +57,6 @@ type MainViewModel(root: CompositionRoot) =
     member this.AboutSpeakEZView = root.GetView<AboutSpeakEZViewModel>()
     member this.ContactView = root.GetView<ContactViewModel>()
     
-    member this.SwitchThemeCommand =
-        ReactiveCommand.Create(fun () -> switchTheme())
+    member this.SwitchTheme() = switchTheme()
     
     static member DesignVM = new MainViewModel(Design.stub)
