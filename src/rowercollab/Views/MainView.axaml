@@ -106,6 +106,12 @@
                   <TextBlock Grid.Column="2" Classes="Headline6" Text="Rower/SpeakEZ Collaboration"
                              VerticalAlignment="Center" 
                              FontFamily="{StaticResource VarelaRound}"/>
+                  <ToggleButton Grid.Column="5" Name="ThemeToggleSwitch"
+                                Theme="{StaticResource MaterialFlatButton}"
+                                Width="32" Height="32" Padding="4" 
+                                Command="{Binding SwitchThemeCommand}" >
+                      <icon:MaterialIcon Kind="ThemeLightDark" Width="24" Height="24" />
+                  </ToggleButton>
                 </Grid>
               </controls:ColorZone>
             <ScrollViewer Name="mainScroller"

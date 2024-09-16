@@ -1,7 +1,9 @@
 ﻿module rowercollab.ViewModels.App
 
 open Elmish
+open ReactiveUI
 open ReactiveElmish.Avalonia
+
 
 type Model =
     {
@@ -26,18 +28,11 @@ let init () =
         View = HomeView
     }
 
-let logModel (model: Model) =
-    printfn "Current Model: %A" model
 
 let update (msg: Msg) (model: Model) =
     match msg with
-    | SetView view -> 
-        let newModel = { View = view }
-        printfn $"View changed to: %A{view}"
-        logModel newModel
-        newModel
+    | SetView view -> { model with View = view }
     | NavigationItemSelected index ->
-        printfn $"Menu item selected: %d{index}"
         match index with
         | 0 -> { model with View = HomeView }
         | 1 -> { model with View = ProjectView }
@@ -46,14 +41,12 @@ let update (msg: Msg) (model: Model) =
         | 4 -> { model with View = AboutSpeakEZView }
         | 5 -> { model with View = ContactView }
         | _ -> model
-    | GoHome -> 
-        let newModel = { View = HomeView }
-        printfn "Navigating to HomeView"
-        logModel newModel
-        newModel
+    | GoHome -> { model with View = HomeView }
+    
 
 let app = 
     Program.mkAvaloniaSimple init update
     |> Program.withErrorHandler (fun (_, ex) -> printfn $"Error: {ex.Message}")
     |> Program.withConsoleTrace
     |> Program.mkStore
+

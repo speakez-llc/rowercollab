@@ -2,9 +2,9 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:themes="clr-namespace:Material.Styles.Themes;assembly=Material.Styles"
              xmlns:icon="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
-             xmlns:local="using:rowercollab"
-             x:Class="rowercollab.App"
-             RequestedThemeVariant="Default">
+             xmlns:local="clr-namespace:rowercollab"
+             x:Class="rowercollab.App" 
+             RequestedThemeVariant="Light">
     <Application.Resources>
         <FontFamily x:Key="NunitoFont">Assets/Fonts/Nunito.ttf</FontFamily>
         <FontFamily x:Key="VarelaRound">Assets/Fonts/VarelaRound.ttf</FontFamily>
@@ -15,6 +15,6 @@
     </Application.DataTemplates>
     <Application.Styles>
         <icon:MaterialIconStyles />
-        <themes:MaterialTheme BaseTheme="Light" PrimaryColor="Grey" SecondaryColor="LightBlue" />
+        <themes:MaterialTheme PrimaryColor="Grey" SecondaryColor="LightBlue" />
     </Application.Styles>
 </Application>
