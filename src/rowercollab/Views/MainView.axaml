@@ -31,9 +31,9 @@
         <controls:NavigationDrawer.LeftDrawerContent>
             <ScrollViewer>
                 <StackPanel>
-                    <controls:ColorZone Mode="Light" Height="180">
+                    <controls:ColorZone Background="#164B72" Height="180">
                         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-                            <Svg Path="avares://rowercollab/Assets/Rower_Logo_Blue_t.svg" Stretch="Uniform" Height="120" />
+                            <Svg Path="avares://rowercollab/Assets/Rower_Logo_Gold_blue.svg" Stretch="Uniform" Height="120" />
                         </StackPanel>
                     </controls:ColorZone>
                     <ListBox Name="DrawerList" SelectedIndex="{Binding SelectedIndex}">
