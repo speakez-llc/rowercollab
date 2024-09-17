@@ -13,7 +13,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Avalonia.iOS" Version="$(AvaloniaVersion)" />
+    <PackageReference Include="Avalonia" Version="11.1.3" />
+    <PackageReference Include="Avalonia.iOS" Version="11.1.3" />
     <ProjectReference Include="..\rowercollab\rowercollab.fsproj" />
     <Compile Include="AppDelegate.fs"/>
     <Compile Include="Main.fs"/>
